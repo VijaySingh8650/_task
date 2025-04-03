@@ -110,29 +110,32 @@ const App = () => {
     destinationIndex: number,
     destinationDroppableId?: string
   ) => {
-   
-   
-    if(destinationIndex >= tasks.length) destinationIndex=tasks.length -1;
-    else if(destinationIndex <= 0) destinationIndex = 0;
-    
-    
-    const allTheTasks = [...tasks]; //shallow copy
-    
-    if(destinationDroppableId){
-
+    // Ensure destinationIndex is within bounds
+    if (destinationIndex >= tasks.length) destinationIndex = tasks.length - 1;
+    else if (destinationIndex < 0) destinationIndex = 0;
+  
+    const allTheTasks = [...tasks]; // Shallow copy the tasks
+  
+    // If there is a destinationDroppableId, update the task's priority
+    if (destinationDroppableId) {
       allTheTasks[sourceIndex].priority = destinationDroppableId;
-
     }
-
-    for(let i=0; i<allTheTasks?.length; i++){
-      if(i===destinationIndex) allTheTasks[i].index = destinationIndex;
-      else allTheTasks[i].index  = i;
-    }
-
-
-
+  
+    // Remove the item at sourceIndex
+    const [movedTask] = allTheTasks.splice(sourceIndex, 1);
+  
+    // Insert the moved task at the destination index
+    allTheTasks.splice(destinationIndex, 0, movedTask);
+  
+    // Update the index values for each task
+    allTheTasks.forEach((task, index) => {
+      task.index = index; // Assign the index of each task
+    });
+  
+    // Update the state with the new array of tasks
     setTasks([...allTheTasks]);
   };
+  
   
   
   
