@@ -1,0 +1,31 @@
+.textDiv{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: .5rem 0;
+    white-space: wrap;
+    color: white;
+    background-color: #6558f5;
+    border-radius: .2rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.textDiv > p > span{
+    font-size: 1rem;
+    margin-left: .5rem;
+}
+
+.btnContainer{
+    display: flex;
+    gap: .5rem
+}
+.icon{
+    cursor: pointer;
+    color: white;
+    height: 1.1rem;
+    width: 1.1rem;
+}

@@ -1,0 +1,30 @@
+.taskContainer{
+    
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: .5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+.taskContainer::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+
+.taskContainer::-webkit-scrollbar-thumb {
+    background-color: #6558f5; /* Change the color of the thumb (scroll bar) */
+    border-radius: 10px; /* Optional: Round the corners of the thumb */
+}
+
+
+.taskHeader{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #6558f5;
+    text-align: center;
+}
